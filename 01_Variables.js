@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 //  4 ways to declare js variable
 
 //  1) using var
