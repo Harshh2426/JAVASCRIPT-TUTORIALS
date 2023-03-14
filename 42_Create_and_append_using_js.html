@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="intro">
+      <p id="pig">Hello this is p tag</p>
+      <h3>Main pagal hu</h3>
+      <p>Nahi main pagal hu</p>
+    </div>
+
+    <ul id="list">
+      <li id="list_1">list 1</li>
+      <li id="list_2">list 2</li>
+      <li id="list_3">list 3</li>
+      <li id="list_4">list 4</li>
+      <li id="list_5">list 5</li>
+    </ul>
+
+    <button id="btn">Nutton</button>
+
+    <p id="inLn" style="background-color: red; color: yellow">
+      I am inline css
+    </p>
+
+    <a href="#" class="link" id="Anc">Press me</a>
+    <script>
+      // Selecting a target element
+      let elm = document.getElementById("intro");
+
+      // Creating a Element tag
+      let how = document.createElement("h1");
+
+      // Creating a content
+      // let text=document.createTextNode("Hello this is text of h1 tag");
+
+      // Adding content to tag
+      // h1.appendChild(text);
+
+      // for adding content to a tag u can use above two line or a single line
+      how.textContent = "hello i am harry";
+
+      // Adding tag as a child to target elemnet
+      //   elm.appendChild(how);
+
+      // If u want to add class or id to elemnt
+      //   how.className = "pagal";
+      //   how.id = "pagalid";
+
+      // If u want to add tag in a body then use
+      //   let body=document.body;
+      //   body.appendChild(how)
+
+      // To add element in user choice location there are four loaction specified to tag:
+      // Beforebegin,afterbegin,beforeend,afterend
+
+      let html = "<h1>User choice insertion</h1>"; // for using this u must use declare the element by this method then only the code is executed.
+      //   elm.insertAdjacentHTML("beforeBegin", html);
+      //   elm.insertAdjacentHTML("afterBegin", html);
+      //   elm.insertAdjacentHTML("beforeEnd", html);
+      //   elm.insertAdjacentHTML("afterEnd", html);
+
+      // or u can use user choice INSERTBEFORE to add element
+      //  1) select parent
+      let prnt = document.getElementById("list");
+
+      // 2) create element and content
+      let lis = document.createElement("li");
+      lis.textContent = "list 6";
+
+      // 3) Choose target element
+      let pos = prnt.firstElementChild.nextElementSibling.nextElementSibling;
+      prnt.insertBefore(lis, pos);
+
+      // For removing elemnt
+      //   1) Select parent element
+      let pprnt = document.getElementById("list");
+
+      // 2) select deleted element
+      let slctdChld =
+        pprnt.firstElementChild.nextElementSibling.nextElementSibling;
+
+      // 3) Delete the element
+      pprnt.removeChild(slctdChld);
+
+      //   For cloning a Element
+      let ppprnt = document.getElementById("list_3");
+      let cloneElm = ppprnt.cloneNode(true);
+      console.log(cloneElm);
+
+      // For replacing a element
+      let rplcNode = document.createElement("li");
+      rplcNode.textContent = "rplcNode";
+      let ppos = pprnt.firstElementChild.nextElementSibling;
+      pprnt.replaceChild(rplcNode, ppos);
+
+      // to change,get and remove the attribute.
+      let btn = document.getElementById("btn");
+      //   -> to set attribute
+      btn.setAttribute("name", "mybtn");
+      // -> to get the value
+      let val = btn.getAttribute("name");
+      console.log(val);
+      // -> to remove attribute
+      btn.removeAttribute("name");
+      // -> to check the attribute name
+      let x = btn.hasAttribute("name");
+      console.log(x);
+
+      // For changing inline css
+      let trgt = document.getElementById("inLn");
+      //   trgt.style.cssText="font-size: 20px";
+      //   -> here if u don't use '+=' then the previous css property overwrites and only new css property is applied.
+      trgt.style.cssText += "font-size: 20px";
+
+      // Class
+      let cls=document.getElementById('Anc');
+
+      // -> To know all available classes present in selected element
+      console.log(cls.classList)
+
+      // To add class name to a element.
+      cls.classList.add("Anc2");
+
+      // To remove classname
+      cls.classList.remove("Anc2");
+
+      // To replace classname
+      cls.classList.replace("link","CLS");
+
+      // To check class exist or not
+      let d=cls.classList.contains("CLS");
+      console.log(d);
+
+      // Toggle is very important tag
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+// -> IT BASICALLY PROVIDES THE SHORT CUT
+
+// THE FUNCTION SHOULD BE DECLARED FIRST BEFORE USE IN ARROW FUNCTION.
+
+
+// -> NORMAL SYNTAX
+
+let c=(a,b,c)=>{
+    console.log(a+" "+b+" "+c);
+}
+c(1,2,3);
+
+// -> U CAN ALSO AVOID TO USE PARENTHESIS.
+
+// -> IF NO PARAMETER IS PRESENT.
+
+let a=()=>console.log("Hello world");
+
+a();
+
+// -> IF ONE PARAMETER IS PRESENT.
+
+let b=x=>console.log(x);
+
+b('hello world');
+
+// -> ARROW FUNCTION AS AN EXPRESSION
+
+let age=19;
+const hell=(age<18)?()=>console.log('baby'):()=>console.log('adult');
+hell(age);
+
+// -> INSIDE THE ARROW FUNCTION ,THIS REFERS TO THE PARENT'S SCOPE.
+
+// -> IT DOESN'T SUPPORT ARGUMENT FUNCTION,WHICH CAN BE TACKLED BY USING SPREAD OPERATOR.
+
+// -> YOU SHOULD NOT USE ARROW FUNCTION TO CREATE METHOD INSIDE OBJECTS.
+
+// -> YOU CANNOT USE ARROW FUNCTION AS A CONSTRUCTOR.
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <!-- 1) Using alert -->
+    <a href="#" onclick="alert('hellow i am harry')"> Alert</a><br />
+
+    <!-- 2) By calling a function -->
+    <a href="#" id="first" onclick="myFunctionX()">Calling a function</a><br />
+
+    <!-- 3) Inline events= -->
+    <a href="#" id="inlineEvent">Inline Events</a><br />
+
+    <!-- 4) Add Event Listener -->
+    <a href="#" id="eventListener">Event Listener</a>
+
+    <!-- 
+        PROBLEM : 
+        
+        -> The only problem is that if u execute multiple function with same name then in top 3 methods only the last function commands get executed and all the above command are not executed while in 4 method all the command of all the function is executed.
+
+        -> If u put all the command in same function then also all the command is executed.
+    -->
+
+    <script>
+      // 2) By calling a function
+      function myFunctionX() {
+        let x = document.getElementById("first");
+        x.innerHTML = "CALLING A FUNCTION";
+      }
+      function myFunctionX() {
+        let x = document.getElementById("first");
+        alert("CALLING A FUNCTION");
+      }
+
+      // 3) Inline event
+      let inlineEvent = document.getElementById("inlineEvent");
+      inlineEvent.onclick = () => {
+        inlineEvent.innerHTML = "INLINE EVENTS";
+      };
+      inlineEvent.onclick = () => {
+        alert("INLINE EVENTS");
+      };
+
+      //   4) Event Listener
+      let eventListener = document.getElementById("eventListener");
+      eventListener.addEventListener("click", () => {
+        eventListener.innerHTML = "EVENT LISTENER";
+      });
+      eventListener.addEventListener("click", () => {
+        alert("EVENT LISTENER");
+      });
+    </script>
+  </body>
+</html>

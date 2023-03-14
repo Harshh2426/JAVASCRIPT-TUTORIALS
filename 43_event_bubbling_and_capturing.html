@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #box1 {
+        height: 400px;
+        width: 400px;
+        background-color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #box2 {
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #btn {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box1">
+        box1
+        <div id="box2">
+          box2
+          <button id="btn">box3</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Event bubbling
+      // In event bubbling,the bottom is called first and after that all the above event will lauch.Ex- When we click on box3,then 3-2-1 is the order of event and when we click on 2 then 2-1 is the order.
+      // Evnet bubbling is the default option.
+      let box1 = document.getElementById("box1");
+      //   box1.addEventListener("click", () => {
+      //     console.log("box1");
+      //   });
+      let box2 = document.getElementById("box2");
+      //   box2.addEventListener("click", () => {
+      //     console.log("box2");
+      //   });
+      let box3 = document.getElementById("btn");
+      //   box3.addEventListener("click", () => {
+      //     console.log("box3");
+      //   });
+
+      // Event capturing
+      //   box1.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("box1");
+      //     },
+      //     true
+      //   );
+
+      //   box2.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("box2");
+      //     },
+      //     true
+      //   );
+
+      //   box3.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("box3");
+      //     },
+      //     true
+      //   );
+
+      // If u want only one event will lauch which was clicked then use
+
+      function myfunction(event) {
+        console.log(this.id);
+        event.stopPropagation();
+      }
+      box1.addEventListener("click", myfunction);
+      box2.addEventListener("click", myfunction);
+      box3.addEventListener("click", myfunction);
+    </script>
+  </body>
+</html>

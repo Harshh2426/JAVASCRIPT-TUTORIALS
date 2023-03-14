@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo">Hellow world</p>
+    <button id="stop">Stop the chnge</button>
+    <script>
+
+    // -> Difference between settimeout and setInterval is that setInterval repeats after the given interval of time.
+
+      let para = document.getElementById("demo");
+
+      let rawa;
+
+    //   let ram = () => {
+    //     rawa = setInterval(() => {
+    //       console.log("Hello world");
+    //     }, 2000);
+    //   };
+      para.addEventListener("click", () => {
+        rawa = setInterval(() => {
+          console.log("Hello world");
+        }, 2000);
+      });
+
+      let stopEvnt = document.getElementById("stop");
+      stopEvnt.addEventListener("click", ()=>{
+        clearInterval(rawa);
+        console.log(rawa);
+      });
+      function ig() {
+        clearInterval(rawa);
+      }
+    </script>
+  </body>
+</html>

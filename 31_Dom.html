@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li class="second nam">list 1</li>
+      <li id="first">list 2</li>
+      <li class="second">list 3</li>
+    </ul>
+    <h2 class="intro">Heading</h2>
+    <div id="jk">
+      <p class="intro">Paragraph</p>
+      <h2>Heading</h2>
+      <p class="intro">Paragraph</p>
+      <h2 class="intro">Heading</h2>
+      <p>Paragraph</p>
+    </div>
+    <script>
+      // -> DOM stands for documnet object model
+      // DOM is an API( Application Programming Interface) for manipulating HTMLand XMl documents.
+
+      // -> selecting the element with id
+      // -> it is used when only one item is to be select
+      // -> if element with given id is not present it return null
+      let ele = document.getElementById("first");
+      console.log(ele.innerHTML); // -> to get the value inside given tag
+      ele.innerHTML = "<p>I am updated</p>";
+      console.log(ele.innerHTML);
+
+      // -> selecting the element with class
+      // -> it is used when more than one item to be select
+      // -> if element with given id is not present it return html elemnet of empty
+      // -> u can also use double class name to change.
+      // -> U cann't access directly selecting class by classname.
+      // -> for this u have to use a loop to tackle all element with classname.
+      let mor = document.getElementsByClassName("second"); // change classname to "second nam"
+      console.log(mor);
+      for (let i = 0; i < mor.length; i++) {
+        mor[i].innerHTML = "Hello sir";
+        console.log((mor[i].innerHTML = "Hello pig"));
+      }
+
+      // -> selecting the element with tagname
+      // -> it is used when only item is to be selected using tagname
+      // -> if element with given tagname is not present it return null
+      let rok = document.getElementsByTagName("h2");
+      console.log(rok); // -> to get the value inside given tag
+      for (let i = 0; i < rok.length; i++) {
+        rok[i].innerHTML = "Hello sir";
+        console.log((rok[i].innerHTML = "Hello pig"));
+      }
+      let dib = document.getElementById("jk");
+      let ans = dib.getElementsByTagName("h2");
+      for (let i = 0; i < ans.length; i++) {
+        ans[i].innerHTML = "Hello jk";
+      }
+
+      // -> selecting the element with queryselector
+      // -> when u use query then it return the first element which satisfy the condition
+      let elm = document.querySelector("h2.intro");
+      console.log(elm); // -> to get the value inside given tag
+      elm.innerHTML = "Query";
+
+      // -> For selecting all, use the queryselectorall
+      // -> it works for all id,class and name
+      let ll = document.querySelectorAll(".intro");
+      console.log(ll);
+      for (let i = 0; i < ll.length; i++) {
+        ll[i].innerHTML = "Hello query";
+      }
+    </script>
+  </body>
+</html>

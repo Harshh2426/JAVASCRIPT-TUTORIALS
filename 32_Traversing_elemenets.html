@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <ul>
+      <li id="intro">List 1</li>
+      <li>List 2</li>
+      <li>List 3</li>
+      <li>List 4</li>
+    </ul>
+    <ul id="leg">
+      <li>List a</li>
+      <li id="sib">List b</li>
+      <li>List c</li>
+      <li>List d</li>
+    </ul>
+    <script>
+      // -> selecting parent of li whose child id is intro
+      let ele = document.getElementById("intro");
+      let prt = ele.parentElement;
+      console.log(prt);
+
+      // -> selecting child of ul whose parent id is leg
+      let par = document.getElementById("leg");
+      let cld = par.children;
+      console.log(cld);
+
+      // -> accessing first child
+      let fir = par.firstElementChild;
+      console.log(fir);
+
+      // -> accessing last child
+      let las = par.lastElementChild;
+      console.log(las);
+
+      // -> selecting sibling
+      let sib = document.getElementById("sib");
+
+      // -> selecting previos sibling
+      let presib = sib.previousElementSibling;
+      console.log(presib);
+
+      // -> selecting next sibling
+      let nexsib = sib.nextElementSibling;
+      console.log(nexsib);
+    </script>
+  </body>
+</html>
